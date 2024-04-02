@@ -1,0 +1,8 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/ic_apps" />
+    <item android:bottom="-20dp">
+        <shape android:shape="line">
+            <stroke android:color="#00FF00" android:width="2dp" />
+        </shape>
+    </item>
+</layer-list>

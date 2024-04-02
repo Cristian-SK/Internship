@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragment.NewsDetailActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Heading"
+            android:text="IQTV NEWS"
+            android:textStyle="italic">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="@id/Heading"
+            android:textAlignment="textEnd"
+            android:layout_alignTop="@id/Heading"
+            android:textSize="7dp"
+            android:text="powered by GnewsApi">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/NewsTitleDetail"
+            android:layout_below="@id/Heading"
+            android:text="News Title"
+            android:textStyle="bold|italic"
+            android:textAlignment="center"
+            android:maxLines="3"
+            ></TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/subTitleDetail"
+            android:text="Subtitle"
+            android:layout_below="@id/NewsTitleDetail"
+            android:textStyle="bold"
+            android:maxLines="3"
+            android:textAlignment="center">
+
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subTitleDetail"
+            android:id="@+id/publishedDetail"
+            android:text="PublishedAt"
+            android:maxLength="10">
+        </TextView>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:id="@+id/ImageDetail"
+            android:layout_below="@+id/publishedDetail"
+            android:src="@drawable/iqtv">
+
+        </ImageView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:id="@+id/ContentDetail"
+            android:text="This is the Content section"
+            android:layout_below="@id/ImageDetail"
+            android:textAlignment="center"
+            >
+
+        </TextView>
+
+
+
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

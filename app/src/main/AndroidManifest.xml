@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <queries>
+        <package android:name="com.google.android.youtube.tv" />
+        <package android:name="com.netflix.mediaclient" />
+        <package android:name="com.formulaone.production" />
+        <package android:name="com.nbaimd.gametime.nba2011" />
+        <package android:name="com.hulu.plus" />
+        <package android:name="com.bamnetworks.mobile.android.gameday.atbat" />
+        <package android:name="com.gotv.nflgamecenter.us.lite" />
+        <package android:name="com.apple.atve.androidtv.appletv" />
+        <package android:name="com.cbs.ott" />
+        <package android:name="com.amazon.avod.thirdpartyclient" />
+        <package android:name="com.neulion.smartphone.ufc.android" />
+        <package android:name="com.disney.disneyplus" />
+    </queries>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+
+<!--  Location Services  -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature
+        android:name="android.software.leanback"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <application
+        android:name=".MyApplication"
+        android:allowBackup="true"
+        android:usesCleartextTraffic="true"
+        android:banner="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.TestProject">
+        <activity
+            android:name=".fragment.NewsDetailActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat.NoActionBar"/>
+        <activity
+            android:name=".TvActivity"
+            android:exported="false"
+            android:theme="@style/Theme.AppCompat" />
+
+        <activity
+            android:name=".MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+                <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true"
+            />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+    </application>
+
+</manifest>

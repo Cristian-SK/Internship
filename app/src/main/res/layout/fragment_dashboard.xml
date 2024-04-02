@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!--NO Check IN
+        And Home Background-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="58dp" />
+
+
+
+    <View
+        android:id="@+id/gradient_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/banner_gradient" />
+
+    <ImageView
+        android:id="@+id/backgroundhome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/iq"
+        android:layout_centerInParent="true"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+
+
+    <RelativeLayout
+        android:id="@+id/rlwelcome"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.3"
+        android:background="@drawable/homeroundwelcome"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/guideline_top"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/Bienvenido"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Bienvenido"
+            android:textSize="30sp"
+            android:textColor="#fff"
+            />
+
+        <TextView
+            android:id="@+id/BienvenidoName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:text="Pedro"
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_below="@id/Bienvenido"
+            />
+        <TextView
+            android:id="@+id/Bienvenidotxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            android:textSize="20sp"
+            android:textColor="#fff"
+            android:layout_marginTop="16dp"
+            android:maxLines="4"
+            android:lineSpacingMultiplier="1.0"
+            android:layout_below="@id/BienvenidoName" />
+        <Button
+            android:id="@+id/langbutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Select Language"
+            android:layout_centerHorizontal="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_below="@id/Bienvenidotxt" />
+
+        <Button
+            android:id="@+id/btnes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Espa"
+            android:visibility="gone"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="#4DFFFFFF"
+            android:layout_below="@id/langbutton" />
+
+        <Button
+            android:id="@+id/btnin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Ingl"
+            android:visibility="gone"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:background="#4DFFFFFF"
+            android:layout_below="@id/btnes" />
+
+
+        <ImageView
+            android:id="@+id/Bienvenidologo"
+            android:layout_width="200dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/langbutton"
+            android:src="@drawable/iq" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/weatherRL"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_start"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#03FFFFFF">
+
+        </androidx.recyclerview.widget.RecyclerView>
+    </RelativeLayout>
+
+
+
+
+    <RelativeLayout
+        android:id="@+id/NewsLay"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.50"
+        app:layout_constraintStart_toEndOf="@+id/weatherRL"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/News"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#03FFFFFF"></androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/contactInfo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.27"
+        app:layout_constraintStart_toEndOf="@+id/NewsLay"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top">
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#03FFFFFF"></androidx.recyclerview.widget.RecyclerView>
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/layout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.2"
+        android:background="#03FFFFFF"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+
+        <LinearLayout
+            android:id="@+id/clockCalendar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/clockround"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <TextClock
+                android:id="@+id/textclockid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:format12Hour="hh:mm:ss"
+                android:gravity="right"
+                android:text="00:00:00"
+                android:textColor="@color/color_white"
+                android:textSize="30sp" />
+
+            <TextClock
+                android:id="@+id/textampmid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:format12Hour="a"
+                android:gravity="left"
+                android:text="am/pm"
+                android:textColor="@color/color_white"
+                android:textSize="20sp" />
+
+
+        </LinearLayout>
+        <TextClock
+            android:id="@+id/textdateid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:format12Hour="MMM dd , yyy"
+            android:gravity="center"
+            android:textColor="@color/color_white"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

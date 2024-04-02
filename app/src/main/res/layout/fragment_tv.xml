@@ -1,0 +1,169 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    >
+
+    <!--    <TextView-->
+    <!--        android:layout_width="wrap_content"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:focusable="true"-->
+    <!--        android:focusedByDefault="true"-->
+    <!--        android:text="TV Fragment"-->
+    <!--        android:textColor="@color/color_white"-->
+    <!--        android:textSize="24sp"-->
+    <!--        android:layout_gravity="center"/>-->
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent=".06" />
+
+    <ImageView
+        android:id="@+id/channelImage"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".6" />
+
+    <com.google.android.exoplayer2.ui.StyledPlayerView
+        app:use_controller="false"
+        android:id="@+id/playerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent=".6" />
+
+
+    <View
+        android:id="@+id/gradient_horizontal"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".7"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/banner_gradient"
+        />
+
+
+<!--    <EditText-->
+<!--        android:id="@+id/searchChannel"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:drawableLeft="@drawable/ic_search"-->
+<!--        android:textColor="#fff"-->
+<!--        android:textSize="26sp"-->
+
+<!--        app:layout_constraintBottom_toBottomOf="@+id/recycler_View"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/recycler_View"-->
+<!--        app:layout_constraintTop_toTopOf="@+id/guideline_center"-->
+<!--        app:layout_constraintWidth_default="percent"-->
+<!--        app:layout_constraintWidth_percent=".4" />-->
+
+    <TextView
+        android:id="@+id/channelName"
+        android:layout_width="0dp"
+        android:text="Loading..."
+        android:textSize="40sp"
+        android:textColor="#fff"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintTop_toTopOf="@+id/guideline_top"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:layout_height="wrap_content"/>
+
+
+    <TextView
+        android:id="@+id/channelDescription"
+        android:layout_width="0dp"
+        android:text="Loading..."
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_marginTop="16dp"
+        android:maxLines="4"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintTop_toBottomOf="@+id/channelName"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/channelCategory"
+        android:layout_width="0dp"
+        android:text="Loading..."
+        android:textSize="20sp"
+        android:textColor="#fff"
+        android:layout_marginTop="16dp"
+        android:maxLines="4"
+        android:lineSpacingMultiplier="1.2"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".4"
+        app:layout_constraintTop_toBottomOf="@+id/channelDescription"
+        app:layout_constraintStart_toStartOf="@+id/guideline_start"
+        android:layout_height="wrap_content"/>
+
+    <ImageView
+        android:id="@+id/companyLogo"
+        android:layout_width="160dp"
+        android:layout_height="50dp"
+        android:src="@drawable/hardrockhotel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="16:9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent=".6" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_View"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/gradient_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/guideline_center"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="170dp"-->
+    <!--        android:layout_height="41dp"-->
+    <!--        android:layout_gravity="right"-->
+    <!--        android:layout_marginTop="492dp"-->
+    <!--        android:alpha="0.5"-->
+    <!--        android:gravity="center_vertical"-->
+    <!--        android:src="@drawable/hardrockhotel" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
